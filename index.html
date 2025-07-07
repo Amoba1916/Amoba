@@ -33,11 +33,14 @@
         <script src="js/rbush.min.js"></script>
         <script src="js/labelgun.min.js"></script>
         <script src="js/labels.js"></script>
-        <script src="data/WatukarungLU2010_2_1.js"></script>
+        <script src="data/WatukarungLU2025_1.js"></script>
+        <script src="data/WatukarungLU2020_2_2.js"></script>
+        <script src="data/WatukarungLU2015_2_3.js"></script>
+        <script src="data/WatukarungLU2010_2_4.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-8.239366763758072,110.97058513079982],[-8.233894678978414,110.98097794409901]]);
+        }).fitBounds([[-8.24205714383374,110.96345097954585],[-8.22990434940619,110.99217539716051]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -78,19 +81,25 @@
         map.createPane('pane_Watukarung_2025_0');
         map.getPane('pane_Watukarung_2025_0').style.zIndex = 400;
         var img_Watukarung_2025_0 = 'data/Watukarung_2025_0.png';
-        var img_bounds_Watukarung_2025_0 = [[-8.243609021975862,110.96710480749609],[-8.23118446406319,110.97796373069284]];
+        var img_bounds_Watukarung_2025_0 = [[-8.243609021975862,110.96710480749609],[-8.231184464063196,110.97796373069288]];
         var layer_Watukarung_2025_0 = new L.imageOverlay(img_Watukarung_2025_0,
                                               img_bounds_Watukarung_2025_0,
                                               {pane: 'pane_Watukarung_2025_0'});
         bounds_group.addLayer(layer_Watukarung_2025_0);
         map.addLayer(layer_Watukarung_2025_0);
-        function pop_WatukarungLU2010_2_1(feature, layer) {
+        function pop_WatukarungLU2025_1(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">id</th>\
+                        <td class="visible-with-data" id="id">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <td colspan="2">' + (feature.properties['Kode'] !== null ? autolinker.link(String(feature.properties['Kode']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                        <th scope="row">Kode</th>\
+                        <td class="visible-with-data" id="Kode">' + (feature.properties['Kode'] !== null ? autolinker.link(String(feature.properties['Kode']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Luas</th>\
+                        <td class="visible-with-data" id="Luas">' + (feature.properties['Luas'] !== null ? autolinker.link(String(feature.properties['Luas']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
@@ -100,7 +109,7 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        var pattern_WatukarungLU2010_2_1_0 = new L.StripePattern({
+        var pattern_WatukarungLU2025_1_0 = new L.StripePattern({
             weight: 0.3,
             spaceWeight: 2.0,
             color: '#00ff22',
@@ -108,8 +117,8 @@
             spaceOpacity: 0,
             angle: 315
         });
-        pattern_WatukarungLU2010_2_1_0.addTo(map);
-        var pattern_WatukarungLU2010_2_1_0 = new L.StripePattern({
+        pattern_WatukarungLU2025_1_0.addTo(map);
+        var pattern_WatukarungLU2025_1_0 = new L.StripePattern({
             weight: 0.3,
             spaceWeight: 2.0,
             color: '#0077fe',
@@ -117,12 +126,12 @@
             spaceOpacity: 0,
             angle: 315
         });
-        pattern_WatukarungLU2010_2_1_0.addTo(map);
-        function style_WatukarungLU2010_2_1_0(feature) {
+        pattern_WatukarungLU2025_1_0.addTo(map);
+        function style_WatukarungLU2025_1_0(feature) {
             switch(String(feature.properties['Kode'])) {
                 case '1':
                     return {
-                pane: 'pane_WatukarungLU2010_2_1',
+                pane: 'pane_WatukarungLU2025_1',
                 opacity: 1,
                 color: 'rgba(129,244,255,1.0)',
                 dashArray: '',
@@ -137,7 +146,7 @@
                     break;
                 case '2':
                     return {
-                pane: 'pane_WatukarungLU2010_2_1',
+                pane: 'pane_WatukarungLU2025_1',
                 opacity: 1,
                 color: 'rgba(255,114,89,1.0)',
                 dashArray: '',
@@ -152,7 +161,7 @@
                     break;
                 case '3':
                     return {
-                pane: 'pane_WatukarungLU2010_2_1',
+                pane: 'pane_WatukarungLU2025_1',
                 opacity: 1,
                 color: 'rgba(171,171,171,1.0)',
                 dashArray: '',
@@ -167,25 +176,25 @@
                     break;
                 case '4':
                     return {
-                pane: 'pane_WatukarungLU2010_2_1',
+                pane: 'pane_WatukarungLU2025_1',
                 stroke: false,
                 fillOpacity: 1,
-                fillPattern: pattern_WatukarungLU2010_2_1_0,
+                fillPattern: pattern_WatukarungLU2025_1_0,
                 interactive: true,
             }
                     break;
                 case '5':
                     return {
-                pane: 'pane_WatukarungLU2010_2_1',
+                pane: 'pane_WatukarungLU2025_1',
                 stroke: false,
                 fillOpacity: 1,
-                fillPattern: pattern_WatukarungLU2010_2_1_0,
+                fillPattern: pattern_WatukarungLU2025_1_0,
                 interactive: true,
             }
                     break;
                 case '6':
                     return {
-                pane: 'pane_WatukarungLU2010_2_1',
+                pane: 'pane_WatukarungLU2025_1',
                 opacity: 1,
                 color: 'rgba(255,249,69,1.0)',
                 dashArray: '',
@@ -200,7 +209,7 @@
                     break;
                 case '7':
                     return {
-                pane: 'pane_WatukarungLU2010_2_1',
+                pane: 'pane_WatukarungLU2025_1',
                 opacity: 1,
                 color: 'rgba(0,255,34,1.0)',
                 dashArray: '',
@@ -215,7 +224,7 @@
                     break;
                 case '8':
                     return {
-                pane: 'pane_WatukarungLU2010_2_1',
+                pane: 'pane_WatukarungLU2025_1',
                 opacity: 1,
                 color: 'rgba(31,133,26,1.0)',
                 dashArray: '',
@@ -230,7 +239,7 @@
                     break;
                 case '9':
                     return {
-                pane: 'pane_WatukarungLU2010_2_1',
+                pane: 'pane_WatukarungLU2025_1',
                 opacity: 1,
                 color: 'rgba(255,250,177,1.0)',
                 dashArray: '',
@@ -245,7 +254,7 @@
                     break;
                 case '10':
                     return {
-                pane: 'pane_WatukarungLU2010_2_1',
+                pane: 'pane_WatukarungLU2025_1',
                 opacity: 1,
                 color: 'rgba(192,121,255,1.0)',
                 dashArray: '',
@@ -260,20 +269,596 @@
                     break;
             }
         }
-        map.createPane('pane_WatukarungLU2010_2_1');
-        map.getPane('pane_WatukarungLU2010_2_1').style.zIndex = 401;
-        map.getPane('pane_WatukarungLU2010_2_1').style['mix-blend-mode'] = 'normal';
-        var layer_WatukarungLU2010_2_1 = new L.geoJson(json_WatukarungLU2010_2_1, {
+        map.createPane('pane_WatukarungLU2025_1');
+        map.getPane('pane_WatukarungLU2025_1').style.zIndex = 401;
+        map.getPane('pane_WatukarungLU2025_1').style['mix-blend-mode'] = 'normal';
+        var layer_WatukarungLU2025_1 = new L.geoJson(json_WatukarungLU2025_1, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_WatukarungLU2010_2_1',
-            layerName: 'layer_WatukarungLU2010_2_1',
-            pane: 'pane_WatukarungLU2010_2_1',
-            onEachFeature: pop_WatukarungLU2010_2_1,
-            style: style_WatukarungLU2010_2_1_0,
+            dataVar: 'json_WatukarungLU2025_1',
+            layerName: 'layer_WatukarungLU2025_1',
+            pane: 'pane_WatukarungLU2025_1',
+            onEachFeature: pop_WatukarungLU2025_1,
+            style: style_WatukarungLU2025_1_0,
         });
-        bounds_group.addLayer(layer_WatukarungLU2010_2_1);
-        map.addLayer(layer_WatukarungLU2010_2_1);
+        bounds_group.addLayer(layer_WatukarungLU2025_1);
+        map.addLayer(layer_WatukarungLU2025_1);
+        function pop_WatukarungLU2020_2_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">id</th>\
+                        <td class="visible-with-data" id="id">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Kode</th>\
+                        <td class="visible-with-data" id="Kode">' + (feature.properties['Kode'] !== null ? autolinker.link(String(feature.properties['Kode']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        var pattern_WatukarungLU2020_2_2_0 = new L.StripePattern({
+            weight: 0.3,
+            spaceWeight: 2.0,
+            color: '#00ff22',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 315
+        });
+        pattern_WatukarungLU2020_2_2_0.addTo(map);
+        var pattern_WatukarungLU2020_2_2_0 = new L.StripePattern({
+            weight: 0.3,
+            spaceWeight: 2.0,
+            color: '#0077fe',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 315
+        });
+        pattern_WatukarungLU2020_2_2_0.addTo(map);
+        function style_WatukarungLU2020_2_2_0(feature) {
+            switch(String(feature.properties['Kode'])) {
+                case '1':
+                    return {
+                pane: 'pane_WatukarungLU2020_2_2',
+                opacity: 1,
+                color: 'rgba(129,244,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(129,244,255,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_WatukarungLU2020_2_2',
+                opacity: 1,
+                color: 'rgba(255,114,89,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,114,89,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_WatukarungLU2020_2_2',
+                opacity: 1,
+                color: 'rgba(171,171,171,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,171,171,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_WatukarungLU2020_2_2',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_WatukarungLU2020_2_2_0,
+                interactive: true,
+            }
+                    break;
+                case '5':
+                    return {
+                pane: 'pane_WatukarungLU2020_2_2',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_WatukarungLU2020_2_2_0,
+                interactive: true,
+            }
+                    break;
+                case '6':
+                    return {
+                pane: 'pane_WatukarungLU2020_2_2',
+                opacity: 1,
+                color: 'rgba(255,249,69,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,249,69,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '7':
+                    return {
+                pane: 'pane_WatukarungLU2020_2_2',
+                opacity: 1,
+                color: 'rgba(0,255,34,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,255,34,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '8':
+                    return {
+                pane: 'pane_WatukarungLU2020_2_2',
+                opacity: 1,
+                color: 'rgba(31,133,26,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(31,133,26,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '9':
+                    return {
+                pane: 'pane_WatukarungLU2020_2_2',
+                opacity: 1,
+                color: 'rgba(255,250,177,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,250,177,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '10':
+                    return {
+                pane: 'pane_WatukarungLU2020_2_2',
+                opacity: 1,
+                color: 'rgba(192,121,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(192,121,255,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_WatukarungLU2020_2_2');
+        map.getPane('pane_WatukarungLU2020_2_2').style.zIndex = 402;
+        map.getPane('pane_WatukarungLU2020_2_2').style['mix-blend-mode'] = 'normal';
+        var layer_WatukarungLU2020_2_2 = new L.geoJson(json_WatukarungLU2020_2_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_WatukarungLU2020_2_2',
+            layerName: 'layer_WatukarungLU2020_2_2',
+            pane: 'pane_WatukarungLU2020_2_2',
+            onEachFeature: pop_WatukarungLU2020_2_2,
+            style: style_WatukarungLU2020_2_2_0,
+        });
+        bounds_group.addLayer(layer_WatukarungLU2020_2_2);
+        map.addLayer(layer_WatukarungLU2020_2_2);
+        function pop_WatukarungLU2015_2_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">id</th>\
+                        <td class="visible-with-data" id="id">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Kode</th>\
+                        <td class="visible-with-data" id="Kode">' + (feature.properties['Kode'] !== null ? autolinker.link(String(feature.properties['Kode']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        var pattern_WatukarungLU2015_2_3_0 = new L.StripePattern({
+            weight: 0.3,
+            spaceWeight: 2.0,
+            color: '#00ff22',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 315
+        });
+        pattern_WatukarungLU2015_2_3_0.addTo(map);
+        var pattern_WatukarungLU2015_2_3_0 = new L.StripePattern({
+            weight: 0.3,
+            spaceWeight: 2.0,
+            color: '#0077fe',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 315
+        });
+        pattern_WatukarungLU2015_2_3_0.addTo(map);
+        function style_WatukarungLU2015_2_3_0(feature) {
+            switch(String(feature.properties['Kode'])) {
+                case '1':
+                    return {
+                pane: 'pane_WatukarungLU2015_2_3',
+                opacity: 1,
+                color: 'rgba(129,244,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(129,244,255,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_WatukarungLU2015_2_3',
+                opacity: 1,
+                color: 'rgba(255,114,89,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,114,89,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_WatukarungLU2015_2_3',
+                opacity: 1,
+                color: 'rgba(171,171,171,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,171,171,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_WatukarungLU2015_2_3',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_WatukarungLU2015_2_3_0,
+                interactive: true,
+            }
+                    break;
+                case '5':
+                    return {
+                pane: 'pane_WatukarungLU2015_2_3',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_WatukarungLU2015_2_3_0,
+                interactive: true,
+            }
+                    break;
+                case '6':
+                    return {
+                pane: 'pane_WatukarungLU2015_2_3',
+                opacity: 1,
+                color: 'rgba(255,249,69,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,249,69,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '7':
+                    return {
+                pane: 'pane_WatukarungLU2015_2_3',
+                opacity: 1,
+                color: 'rgba(0,255,34,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,255,34,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '8':
+                    return {
+                pane: 'pane_WatukarungLU2015_2_3',
+                opacity: 1,
+                color: 'rgba(31,133,26,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(31,133,26,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '9':
+                    return {
+                pane: 'pane_WatukarungLU2015_2_3',
+                opacity: 1,
+                color: 'rgba(255,250,177,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,250,177,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '10':
+                    return {
+                pane: 'pane_WatukarungLU2015_2_3',
+                opacity: 1,
+                color: 'rgba(192,121,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(192,121,255,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_WatukarungLU2015_2_3');
+        map.getPane('pane_WatukarungLU2015_2_3').style.zIndex = 403;
+        map.getPane('pane_WatukarungLU2015_2_3').style['mix-blend-mode'] = 'normal';
+        var layer_WatukarungLU2015_2_3 = new L.geoJson(json_WatukarungLU2015_2_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_WatukarungLU2015_2_3',
+            layerName: 'layer_WatukarungLU2015_2_3',
+            pane: 'pane_WatukarungLU2015_2_3',
+            onEachFeature: pop_WatukarungLU2015_2_3,
+            style: style_WatukarungLU2015_2_3_0,
+        });
+        bounds_group.addLayer(layer_WatukarungLU2015_2_3);
+        map.addLayer(layer_WatukarungLU2015_2_3);
+        function pop_WatukarungLU2010_2_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <th scope="row">id</th>\
+                        <td class="visible-with-data" id="id">' + (feature.properties['id'] !== null ? autolinker.link(String(feature.properties['id']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <th scope="row">Kode</th>\
+                        <td class="visible-with-data" id="Kode">' + (feature.properties['Kode'] !== null ? autolinker.link(String(feature.properties['Kode']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
+			layer.on('popupopen', function(e) {
+				addClassToPopupIfMedia(content, e.popup);
+			});
+			layer.bindPopup(content, { maxHeight: 400 });
+        }
+
+        var pattern_WatukarungLU2010_2_4_0 = new L.StripePattern({
+            weight: 0.3,
+            spaceWeight: 2.0,
+            color: '#00ff22',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 315
+        });
+        pattern_WatukarungLU2010_2_4_0.addTo(map);
+        var pattern_WatukarungLU2010_2_4_0 = new L.StripePattern({
+            weight: 0.3,
+            spaceWeight: 2.0,
+            color: '#0077fe',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 315
+        });
+        pattern_WatukarungLU2010_2_4_0.addTo(map);
+        function style_WatukarungLU2010_2_4_0(feature) {
+            switch(String(feature.properties['Kode'])) {
+                case '1':
+                    return {
+                pane: 'pane_WatukarungLU2010_2_4',
+                opacity: 1,
+                color: 'rgba(129,244,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(129,244,255,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_WatukarungLU2010_2_4',
+                opacity: 1,
+                color: 'rgba(255,114,89,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,114,89,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_WatukarungLU2010_2_4',
+                opacity: 1,
+                color: 'rgba(171,171,171,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(171,171,171,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_WatukarungLU2010_2_4',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_WatukarungLU2010_2_4_0,
+                interactive: true,
+            }
+                    break;
+                case '5':
+                    return {
+                pane: 'pane_WatukarungLU2010_2_4',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_WatukarungLU2010_2_4_0,
+                interactive: true,
+            }
+                    break;
+                case '6':
+                    return {
+                pane: 'pane_WatukarungLU2010_2_4',
+                opacity: 1,
+                color: 'rgba(255,249,69,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,249,69,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '7':
+                    return {
+                pane: 'pane_WatukarungLU2010_2_4',
+                opacity: 1,
+                color: 'rgba(0,255,34,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,255,34,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '8':
+                    return {
+                pane: 'pane_WatukarungLU2010_2_4',
+                opacity: 1,
+                color: 'rgba(31,133,26,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(31,133,26,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '9':
+                    return {
+                pane: 'pane_WatukarungLU2010_2_4',
+                opacity: 1,
+                color: 'rgba(255,250,177,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(255,250,177,1.0)',
+                interactive: true,
+            }
+                    break;
+                case '10':
+                    return {
+                pane: 'pane_WatukarungLU2010_2_4',
+                opacity: 1,
+                color: 'rgba(192,121,255,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(192,121,255,1.0)',
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_WatukarungLU2010_2_4');
+        map.getPane('pane_WatukarungLU2010_2_4').style.zIndex = 404;
+        map.getPane('pane_WatukarungLU2010_2_4').style['mix-blend-mode'] = 'normal';
+        var layer_WatukarungLU2010_2_4 = new L.geoJson(json_WatukarungLU2010_2_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_WatukarungLU2010_2_4',
+            layerName: 'layer_WatukarungLU2010_2_4',
+            pane: 'pane_WatukarungLU2010_2_4',
+            onEachFeature: pop_WatukarungLU2010_2_4,
+            style: style_WatukarungLU2010_2_4_0,
+        });
+        bounds_group.addLayer(layer_WatukarungLU2010_2_4);
+        map.addLayer(layer_WatukarungLU2010_2_4);
         setBounds();
         L.ImageOverlay.include({
             getBounds: function () {
